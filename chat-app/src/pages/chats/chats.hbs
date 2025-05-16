@@ -1,0 +1,27 @@
+<main class="chats-page">
+  <div class="chats-container">
+    <aside class="chats-sidebar">
+      <div class="sidebar-header">
+        {{> Link href="/profile" text="Профиль >"}}
+        {{> Input placeholder="Поиск" name="search"}}
+      </div>
+      <ul class="chat-list">
+        {{#each chats}}
+          <li class="chat-item">
+            <div class="chat-avatar"></div>
+            <div class="chat-info">
+              <h3 class="chat-title">{{title}}</h3>
+              <p class="chat-preview">{{lastMessage}}</p>
+            </div>
+            <time class="chat-time">{{time}}</time>
+          </li>
+        {{/each}}
+      </ul>
+    </aside>
+    <section class="chat-window">
+      <div class="empty-chat">
+        Выберите чат, чтобы начать общение
+      </div>
+    </section>
+  </div>
+</main>
