@@ -18,3 +18,7 @@ npm run start
 /profile
 /404
 /500
+
+
+*netify*
+```https://vermillion-pudding-36cbbc.netlify.app/```
