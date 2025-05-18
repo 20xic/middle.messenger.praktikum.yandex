@@ -10,7 +10,8 @@
     "start": "npm run build && npm run preview"
   },
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-handlebars": "^2.0.0"
   },
   "dependencies": {
     "postcss-nested": "^7.0.2",
