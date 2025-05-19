@@ -1,3 +1,4 @@
+// main.js
 import Handlebars from 'handlebars';
 import { Router } from './router/Router';
 import { routes } from './router/routes';
@@ -6,18 +7,19 @@ import './style.postcss';
 
 async function initApp() {
   try {
-    
-    const components = await Promise.all([
-      import('./components/Button/Button.hbs?raw'),
-      import('./components/Input/Input.hbs?raw'),
-      import('./components/Link/Link.hbs?raw')
-    ]);
-
-    components.forEach((component, index) => {
-      const name = ['Button', 'Input', 'Link'][index];
-      Handlebars.registerPartial(name, component.default);
+    const componentTemplates = import.meta.glob('./components/**/*.hbs', {
+      query: '?raw',
+      import: 'default',
+      eager: true
     });
 
+    ['Button', 'Input', 'Link'].forEach(name => {
+      const path = `./components/${name}/${name}.hbs`;
+      const template = componentTemplates[path];
+      if (template) {
+        Handlebars.registerPartial(name, template);
+      }
+    });
     
     const router = new Router(routes, {
       chats: mockChats,

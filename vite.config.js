@@ -1,29 +1,16 @@
 import { defineConfig } from 'vite';
 import handlebars from 'vite-plugin-handlebars';
-import path from 'path';
 
 export default defineConfig({
-  preview: {
-    port: 3000
-  },
   plugins: [
     handlebars({
-      partialDirectory: [
-        path.resolve(__dirname, './src/components'),
-        path.resolve(__dirname, './src/pages')
-      ],
-      compileOptions: {
-        strict: true,
-        preventIndent: true
-      }
+      partialDirectory: './src/components'
     })
   ],
-  server: {
-    fs: {
-      strict: false
-    }
+  build: {
+    assetsInlineLimit: 0
   },
-  optimizeDeps: {
-    include: ['**/*.hbs']
+  preview: {
+    port: 3000 
   }
 });

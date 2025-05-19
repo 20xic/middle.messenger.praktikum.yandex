@@ -1,23 +1,17 @@
 import Handlebars from 'handlebars';
 
+const pageTemplates = import.meta.glob('../pages/**/*.hbs', {
+  query: '?raw',
+  import: 'default',
+  eager: true
+});
+
 export class Router {
   constructor(routes, data) {
     this.routes = routes;
     this.data = data;
     this.init();
   }
-
-  async loadTemplate(templatePath) {
-    try {
-      const module = await import(/* @vite-ignore */ templatePath);
-      return module.default;
-    } catch (e) {
-      console.error('Template load error:', e);
-      throw new Error(`Template not found: ${templatePath}`);
-    }
-  }
-
-  
 
   init() {
     window.addEventListener('popstate', () => this.handleRoute());
@@ -30,18 +24,22 @@ export class Router {
     const route = this.routes[path] || this.routes['/404'];
     
     try {
-      const template = await this.loadTemplate(`/src/pages/${route.template}.hbs?raw`);
+      const templateKey = `../pages/${route.template}.hbs`;
+      const template = pageTemplates[templateKey];
+      
+      if (!template) {
+        throw new Error(`Template not found: ${templateKey}`);
+      }
+      
       const render = Handlebars.compile(template);
       const dataKey = route.dataKey;
       const context = dataKey ? { [dataKey]: this.data[dataKey] } : {};
       document.getElementById('app').innerHTML = render(context);
       this.updateActiveLinks(path);
-    } catch (error) { 
+    } catch (error) {
       console.error('Render error:', error);
-      this.handleError();
+      this.navigate('/500');
     }
-
-
   }
 
   updateActiveLinks(currentPath) {

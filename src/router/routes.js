@@ -16,11 +16,11 @@ export const routes = {
       dataKey: 'profile'
     },
     '/404': {
-      template: 'errors/404/404',
+      template: '404/404',
       dataKey: null
     },
     '/500': {
-      template: 'errors/500/500',
+      template: '500/500',
       dataKey: null
     }
   };
