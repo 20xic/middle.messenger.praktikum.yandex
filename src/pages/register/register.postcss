@@ -1,0 +1,34 @@
+.register-page {
+    @extend .auth-page;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    .register-form {
+      width: var(--form-wide-width);
+      padding: var(--form-padding);
+      background: white;
+      border-radius: var(--form-border-radius);
+      box-shadow: var(--form-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+  
+      .register-title {
+        text-align: center;
+        margin: 0 0 20px 0;
+        font-size: 20px;
+        color: var(--text-primary);
+      }
+  
+      .button--primary {
+        margin-top: 10px;
+      }
+  
+      .link--center {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+}
