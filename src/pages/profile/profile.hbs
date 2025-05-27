@@ -1,0 +1,24 @@
+<main class="profile-page">
+  <div class="profile-container">
+    {{> Link href="/chats" text="< Назад" class="back-link"}}
+    <div class="profile-content">
+      <div class="avatar-container">
+        <div class="profile-avatar"></div>
+        <h1 class="profile-name">{{profile.name}}</h1>
+      </div>
+      <div class="profile-info">
+        {{#each profile.info}}
+          <div class="info-row">
+            <span class="info-label">{{label}}</span>
+            <span class="info-value">{{value}}</span>
+          </div>
+        {{/each}}
+      </div>
+      <div class="profile-actions">
+        {{> Link href="/edit-profile" text="Изменить данные"}}
+        {{> Link href="/change-password" text="Изменить пароль"}}
+        {{> Link href="/" text="Выйти" class="logout-link"}}
+      </div>
+    </div>
+  </div>
+</main>

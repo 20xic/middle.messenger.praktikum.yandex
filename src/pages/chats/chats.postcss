@@ -1,0 +1,104 @@
+.chats-page {
+    height: 100vh;
+    background: var(--bg-primary);
+    
+    .chats-container {
+      display: flex;
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+      position: relative;
+    }
+  
+    .chats-sidebar {
+      width: 310px;
+      border-right: 1px solid var(--border-color);
+      padding: 20px 15px;
+      overflow-y: auto;
+    }
+  
+    .sidebar-header {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+  
+      .input {
+        margin-top: 15px;
+      }
+    }
+  
+    .chat-list {
+      list-style: none;
+      margin: 20px 0 0;
+      padding: 0;
+    }
+  
+    .chat-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 8px;
+  
+      &:hover {
+        background: var(--bg-secondary);
+        transform: translateX(5px);
+      }
+    }
+  
+    .chat-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+  
+    .chat-info {
+      flex-grow: 1;
+      min-width: 0;
+    }
+  
+    .chat-title {
+      font-size: 15px;
+      margin: 0 0 4px;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+  
+    .chat-preview {
+      font-size: 13px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+    }
+  
+    .chat-time {
+      font-size: 12px;
+      color: var(--text-secondary);
+      align-self: flex-start;
+      margin-left: 10px;
+      flex-shrink: 0;
+    }
+  
+    .chat-window {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+    }
+  
+    .empty-chat {
+      color: var(--text-secondary);
+      font-size: 16px;
+      text-align: center;
+      padding: 20px;
+    }
+  }
