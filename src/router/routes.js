@@ -15,6 +15,14 @@ export const routes = {
       template: 'profile/profile',
       dataKey: 'profile'
     },
+    '/edit-profile': {
+    template: 'edit-profile/edit-profile',
+    dataKey: 'profile'
+    },
+    '/change-password': {
+    template: 'change-password/change-password',
+    dataKey: 'profile'
+    },
     '/404': {
       template: '404/404',
       dataKey: null

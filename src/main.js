@@ -34,6 +34,10 @@ async function initApp() {
         router.navigate('/chats');
       } else if (e.target.classList.contains('register-form')) {
         router.navigate('/');
+      } else if (e.target.classList.contains('edit-profile-form')) {
+        router.navigate('/profile');
+      } else if (e.target.classList.contains('change-password-form')) {
+        router.navigate('/profile');
       }
     });
 

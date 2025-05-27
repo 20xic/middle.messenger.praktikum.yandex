@@ -1,0 +1,21 @@
+<main class="edit-profile-page">
+  <div class="profile-container">
+    {{> Link href="/profile" text="< Назад" class="back-link"}}
+    <div class="profile-content">
+      <div class="avatar-container">
+        <div class="profile-avatar"></div>
+        <h1 class="profile-name">{{profile.name}}</h1>
+      </div>
+      <form class="edit-profile-form">
+        <div class="profile-info">
+          {{> Input name="email" label="Почта" value=profile.info.0.value}}
+          {{> Input name="login" label="Логин" value=profile.info.1.value}}
+          {{> Input name="first_name" label="Имя" value=profile.info.2.value}}
+          {{> Input name="second_name" label="Фамилия" value=profile.info.3.value}}
+          {{> Input name="phone" label="Телефон" value=profile.info.4.value}}
+        </div>
+        {{> Button text="Сохранить" class="button--primary" type="submit"}}
+      </form>
+    </div>
+  </div>
+</main>
