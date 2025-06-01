@@ -1,0 +1,14 @@
+<main class="register-page">
+  <form class="register-form">
+    <h1 class="register-title">Регистрация</h1>
+    {{> Input name="email" label="Почта" type="email" placeholder="example@mail.com"}}
+    {{> Input name="login" label="Логин" placeholder="Придумайте логин"}}
+    {{> Input name="first_name" label="Имя" placeholder="Ваше имя"}}
+    {{> Input name="second_name" label="Фамилия" placeholder="Ваша фамилия"}}
+    {{> Input name="phone" label="Телефон" type="tel" placeholder="+7 (999) 999-99-99"}}
+    {{> Input name="password" label="Пароль" type="password" placeholder="Не менее 8 символов"}}
+    {{> Input name="password_confirm" label="Пароль (еще раз)" type="password" placeholder="Повторите пароль"}}
+    {{> Button text="Зарегистрироваться" class="button--primary"}}
+    {{> Link href="/chats" text="Войти" class="link--center"}}
+  </form>
+</main>

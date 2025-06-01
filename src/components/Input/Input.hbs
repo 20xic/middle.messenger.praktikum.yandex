@@ -1,0 +1,10 @@
+<div class="input-field">
+  <label class="input-label">{{label}}</label>
+  <input 
+    type="{{#if type}}{{type}}{{else}}text{{/if}}" 
+    class="input"
+    placeholder="{{placeholder}}"
+    name="{{name}}"
+    {{#if required}}required{{/if}}
+  >
+</div>

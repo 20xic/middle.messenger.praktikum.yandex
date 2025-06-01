@@ -1,0 +1,9 @@
+<main class="auth-page">
+  <form class="auth-form">
+    <h1 class="form-title">Вход</h1>
+    {{> Input name="login" label="Логин" placeholder="Введите логин"}}
+    {{> Input name="password" label="Пароль" type="password" placeholder="Введите пароль"}}
+    {{> Button text="Авторизоваться" class="button--primary"}}
+    {{> Link href="/register" text="Нет аккаунта?" class="link--center"}}
+  </form>
+</main>
